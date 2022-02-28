@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="java.util.List"/>
+        <import type="com.ncidious.ncidious.data.network.responses.NoticeResponse"/>
+        <variable
+            name="noticeList"
+            type="List&lt;NoticeResponse>" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.notices.NoticesFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/notices_recyclerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:bindDataList="@{noticeList}"
+            tools:listitem="@layout/item_layout_notice"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
